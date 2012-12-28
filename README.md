@@ -8,6 +8,7 @@ http://upon2020.com/blog/2012/12/my-raspberry-pi-pool-timer-why/
 
 
 Installation:
+
     sudo apt-get update
     sudo apt-get install libapache2-mod-php5
     sudo apt-get install git
@@ -21,11 +22,14 @@ Installation:
     sudo make install
     cd /var/www
     sudo git clone https://github.com/jernst/rasptimer.git
+
 then visit
+
     http://1.1.1.1/rasptimer/
-    (if 1.1.1.1 is the IP address of your Raspberry Pi)
+        (if 1.1.1.1 is the IP address of your Raspberry Pi)
 
 To add a password:
+
     sudo vi /etc/apache2/sites-enabled/000-default
         In section <Directory /var/www/, change "AllowOverride None" to "AllowOverride AuthConfig"
     sudo a2enmod auth_digest

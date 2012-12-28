@@ -23,12 +23,15 @@ Installation:
     cd /var/www
     sudo git clone https://github.com/jernst/rasptimer.git
 
+then enter your Raspberry Pi input/output configuration by editing
+    vi rasptimer/config.php
+
 then visit
 
     http://1.1.1.1/rasptimer/
         (if 1.1.1.1 is the IP address of your Raspberry Pi)
 
-To add a password:
+To add a password to the website:
 
     sudo vi /etc/apache2/sites-enabled/000-default
         In section <Directory /var/www/, change "AllowOverride None" to "AllowOverride AuthConfig"

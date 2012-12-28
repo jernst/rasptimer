@@ -1,0 +1,4 @@
+AuthType Digest
+AuthUserFile /var/www/.htpasswd
+AuthName "Administrators only"
+require valid-user

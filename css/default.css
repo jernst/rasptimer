@@ -2,3 +2,22 @@
     color: red;
 }
 
+table.status,
+table.schedule {
+    border: 1px solid #d0d0d0;
+}
+table.status th,
+table.status td,
+table.schedule th,
+table.schedule td {
+    padding: 5px 12px;
+}
+
+div.footnote {
+    font-size: small;
+    margin-top: 40px;
+}
+div.footnote > p {
+    border-top: 1px solid #d0d0d0;
+    padding-top: 10px;
+}

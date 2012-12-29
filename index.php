@@ -20,7 +20,10 @@ if( $_POST ) {
   <link href="css/default.css" rel="stylesheet" type="text/css" />
  </head>
  <body>
-  <h1>Rasptimer</h1>
+  <div class="h1">
+   <h1>Rasptimer</h1>
+  </div>
+  <div class="body">
 <?php
 if( !isset( $devices )) {
 ?>
@@ -33,10 +36,11 @@ if( !isset( $devices )) {
     require_once( 'show-schedule.php' );
 }
 ?>
- <div class="footnote">
-  <p>Licensed under <a href="LICENSE">GPLv3</a>.
-     More info: <a href="https://github.com/jernst/rasptimer">https://github.com/jernst/rasptimer</a>.</p>
- </div>
+  </div>
+  <div class="footnote">
+   <p>Licensed under <a href="LICENSE">GPLv3</a>.
+      More info: <a href="https://github.com/jernst/rasptimer">https://github.com/jernst/rasptimer</a>.</p>
+  </div>
  </body>
 </html>
 

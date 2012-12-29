@@ -1,3 +1,24 @@
+html {
+    background-image: url( ../images/clock.svg );
+    font-family: "Helvetica Neue", Arial;
+}
+body {
+    margin: 20px auto;
+    padding: 0;
+    width: 800px;
+    background: #fff;
+    box-shadow: 0 0 3px 6px #bbb;
+}
+div.body,
+div.footnote {
+    padding: 10px 30px;
+}
+
+div.h1 {
+    padding: 3px 30px;
+    background: #f0f0f0;
+}
+
 .error {
     color: red;
 }
@@ -20,4 +41,7 @@ div.footnote {
 div.footnote > p {
     border-top: 1px solid #d0d0d0;
     padding-top: 10px;
+}
+form.change-schedule input[type="text"] {
+    width: 2em;
 }

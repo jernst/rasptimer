@@ -4,7 +4,7 @@
         $postPar = $deviceName . 'Action';
         $postPar = str_replace( ' ', '_', $postPar ); // we love PHP
         if( isset( $_POST[$postPar] )) {
-            runGpio( "write $devicePin " . ( $_POST[$postPar] == 'Turn on' ? "1" : "0" ));
+            runGpio( "write", $devicePin, $_POST[$postPar] == 'Turn on' ? "1" : "0" );
         }
     }
 

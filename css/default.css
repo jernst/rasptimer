@@ -9,7 +9,9 @@ body {
     background: #fff;
     box-shadow: 0 0 3px 6px #bbb;
 }
-div.body,
+div.body {
+    padding: 0 30px;
+}
 div.footnote {
     padding: 10px 30px;
 }
@@ -17,6 +19,9 @@ div.footnote {
 div.h1 {
     padding: 3px 30px;
     background: #f0f0f0;
+}
+h2 {
+    margin: 19px 0 9px 0;
 }
 
 .error {

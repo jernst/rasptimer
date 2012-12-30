@@ -16,12 +16,12 @@ if( $_POST ) {
 ?>
 <html>
  <head>
-  <title>Rasptimer</title>
+  <title><?php print( $title ); ?></title>
   <link href="css/default.css" rel="stylesheet" type="text/css" />
  </head>
  <body>
   <div class="h1">
-   <h1>Rasptimer</h1>
+   <h1><?php print( $title ); ?></h1>
   </div>
   <div class="body">
 <?php

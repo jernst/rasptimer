@@ -1,8 +1,11 @@
 <?php
-// The devices being controlled are defined here.
-// Adjust as needed.
+// Configuration file. Adjust as needed.
 
-// key: name of the device
+// Title of the web page
+$title = "Rasptimer";
+
+// The devices being controlled.
+// key:   name of the device
 // value: wiringPi PIN number, see https://projects.drogon.net/raspberry-pi/wiringpi/pins/
 
 $devices = array(

@@ -23,6 +23,9 @@ div.h1 {
 h2 {
     margin: 19px 0 9px 0;
 }
+a {
+    color: inherit;
+}
 
 .error {
     color: red;
@@ -50,3 +53,29 @@ div.footnote > p {
 form.change-schedule input[type="text"] {
     width: 2em;
 }
+div.tabs {
+    float: right;
+    margin: 10px 60px 10px 10px;
+}
+div.tabs > ul {
+    margin: 0;
+    padding: 0;
+}
+div.tabs > ul > li {
+    display: inline;
+    margin: 0 5px;
+}
+div.log {
+    margin: 40px 30px 30px 30px;
+}
+div.log > table {
+    width: 100%;
+    border-collapse: collapse;
+}
+div.log > table > * > * > td,
+div.log > table > * > * > th {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    width: 33%;
+}
+

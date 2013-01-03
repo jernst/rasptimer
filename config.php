@@ -12,3 +12,7 @@ $devices = array(
     "Main pump"    => 11,
     "Sweeper pump" =>  6
 );
+
+// Where to log events. This file must be writeable by the webserver user, e.g. "chown www-data /var/log/rasptimer.log"
+$logFile = "/var/log/rasptimer.log";
+

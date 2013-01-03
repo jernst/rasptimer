@@ -9,7 +9,7 @@
     }
 
 // schedule
-    if( $_POST['change-schedule'] == 'Save' ) {
+    if( isset( $_POST['change-schedule'] ) && $_POST['change-schedule'] == 'Save' ) {
         $schedule = readCrontab();
         $deviceName = $_POST['deviceName'];
         if( isset( $devices[$deviceName] )) {

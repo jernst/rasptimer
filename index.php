@@ -1,13 +1,8 @@
 <?php
 require_once( 'config.php' );
+require_once( 'template.php' );
 require_once( 'functions.php' );
-
-$baseUrl = $_SERVER['REQUEST_URI'];
-$q       = strpos( $baseUrl, '?' );
-if( $q > 0 ) {
-    $baseUrl = substr( $baseUrl, 0, $q );
-}
-$baseUrl = ( isset( $_SERVER['HTTPS'] ) ? 'https://' : 'http://' ) . $_SERVER['SERVER_NAME'] . $baseUrl;
+require_once( 'decode-url.php' );
 
 if( $_POST ) {
     require_once( 'handle-post.php' );
@@ -16,13 +11,10 @@ if( $_POST ) {
 ?>
 <html>
  <head>
-  <title><?php print( $title ); ?></title>
-  <link href="css/default.css" rel="stylesheet" type="text/css" />
+<?php emitHtmlHead( $title ); ?>
  </head>
  <body>
-  <div class="h1">
-   <h1><?php print( $title ); ?></h1>
-  </div>
+<?php emitHeader( $title ); ?>
   <div class="body">
 <?php
 if( !isset( $devices )) {
@@ -37,10 +29,7 @@ if( !isset( $devices )) {
 }
 ?>
   </div>
-  <div class="footnote">
-   <p>Licensed under <a href="LICENSE">GPLv3</a>.
-      More info: <a href="https://github.com/jernst/rasptimer">https://github.com/jernst/rasptimer</a>.</p>
-  </div>
+<?php emitFooter(); ?>
  </body>
 </html>
 

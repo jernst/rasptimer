@@ -1,5 +1,20 @@
 <?php
+function logEvent( $pin, $event ) {
+    global $logFile;
+
+    if( isset( $logFile )) {
+        $fh = @fopen( $logFile, "a" );
+        if( isset( $fh )) {
+            fprintf( $fh, "%s\t%s\t%s\n", strftime( "%Y-%m-%d %H:%M:%S" ), $pin, $event );
+            fclose( $fh );
+        }
+    }
+}
+
 function runGpio( $cmd, $pin, $args = '' ) {
+    if( $cmd == 'write' ) {
+        logEvent( $pin, $args );
+    }
     exec( "/usr/local/bin/gpio mode $pin out", $out, $status );
     $status = NULL;
     $out    = NULL;

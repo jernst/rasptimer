@@ -47,5 +47,6 @@ if( !isset( $matches ) || !$matches ) {
 ?>
   </tbody>
  </table>
-</table>
+ <p>It currently is <?php print( date( "H:i:s" )) ?>. <a href="">Refresh</a>.</p>
+</div>
 

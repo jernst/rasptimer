@@ -1,11 +1,13 @@
 rasptimer
 =========
 
-Use Raspberry Pi as a timer, configurable over the web.
+Use Raspberry Pi as a schedulable timer for GPIO hardware, configurable over the web.
 
-This will be the software for the pool timer project described at
+This is the software for the pool timer project described at
 http://upon2020.com/blog/2012/12/my-raspberry-pi-pool-timer-why/
 
+This should run on any Linux-based OS, although installation instructions
+were written for raspbian. You just need Apache, PHP, and WiringPi.
 
 Installation:
 
@@ -39,4 +41,8 @@ To add a password to the website:
     sudo service apache2 restart
     sudo htdigest -c /var/www/.htpasswd "Administrators only" admin
         (use any username instead of 'admin')
+
+To enable weekly log rotation:
+
+    sudo cp /etc/logrotate.d/rasptimer logrotate.d-rasptimer /etc/logrotate.d/rasptimer
 

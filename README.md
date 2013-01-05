@@ -24,6 +24,8 @@ Installation:
     sudo make install
     cd /var/www
     sudo git clone https://github.com/jernst/rasptimer.git
+    touch /var/log/rasptimer.log
+    chown www-data /var/log/rasptimer.log
 
 then enter your Raspberry Pi input/output configuration by editing
     vi rasptimer/config.php

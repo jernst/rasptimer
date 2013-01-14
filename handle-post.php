@@ -35,6 +35,6 @@ function rangeCheck( $val, $min, $max ) {
         }
     }
 
-    header( 'Location: ' . $baseUrl );
+    header( "Location: $baseUrl/" );
     exit( 0 );
 

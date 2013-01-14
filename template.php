@@ -11,12 +11,12 @@ function emitHeader( $title ) {
     global $baseUrl;
 ?>
   <div class="h1">
-   <h1><a href="<?= $baseUrl ?>"><?= $title ?></a></h1>
+   <h1><a href="<?= $baseUrl ?>/"><?= $title ?></a></h1>
   </div>
   <div class="tabs">
    <ul>
-    <li><a href="<?= $baseUrl ?>">Front</a></li>
-    <li><a href="<?= $baseUrl ?>logs.php">Logs</a></li>
+    <li><a href="<?= $baseUrl ?>/">Front</a></li>
+    <li><a href="<?= $baseUrl ?>/logs.php">Logs</a></li>
    </ul>
   </div>
 <?php

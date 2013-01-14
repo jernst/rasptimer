@@ -34,7 +34,7 @@ if( !isset( $foundDeviceName )) {
      </p>
      <p>
       <input type="submit" name="change-schedule" value="Save"/>
-      <a href="<?php print( $baseUrl ) ?>">Cancel</a>
+      <a href="<?php print( $baseUrl ) ?>/">Cancel</a>
      </p>
     </form>
 <?php

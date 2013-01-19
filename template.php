@@ -17,6 +17,7 @@ function emitHeader( $title ) {
    <ul>
     <li><a href="<?= $baseUrl ?>/">Front</a></li>
     <li><a href="<?= $baseUrl ?>/logs.php">Logs</a></li>
+    <li><a href="<?= $baseUrl ?>/graphic-logs.php">Graphic logs</a></li>
    </ul>
   </div>
 <?php

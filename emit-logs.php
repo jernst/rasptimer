@@ -14,19 +14,19 @@ $logFh = @fopen( $logFile, "r" );
 if( $logFh ) {
     $reverseDevices = array_flip( $devices );
     while( $line = fgets( $logFh )) {
-        if( preg_match( '!^([^\t]*)\t([^\t]*)\t([^\t]*)$!', $line, $matches )) {
+        if( ( $matches = parseLogLine( $line ))) {
 ?>
    <tr>
-    <td><?= $matches[1] ?></td>
-    <td><?= $reverseDevices[ $matches[2]] ?></td>
+    <td><?= sprintf( "%02d-%02d-%02d %02d:%02d:%02d", $matches[1], $matches[2], $matches[3], $matches[4], $matches[5], $matches[6] ) ?></td>
+    <td><?= $reverseDevices[ $matches[7]] ?></td>
     <td>
 <?php
-            if( $matches[3] == 1 ) {
+            if( $matches[8] == 1 ) {
                 print( 'On' );
-            } else if( $matches[3] == 0 ) {
+            } else if( $matches[8] == 0 ) {
                 print( 'Off' );
             } else {
-                print( $matches[3] );
+                print( $matches[8] );
             }
 ?>
     </td>

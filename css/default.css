@@ -78,4 +78,62 @@ div.log > table > * > * > th {
     padding: 5px;
     width: 33%;
 }
+div.graphic-log {
+    margin: 40px 30px 30px 30px;
+}
+div.graphic-log > table {
+    width: 100%;
+    border-collapse: collapse;
+}
+div.graphic-log > table > * > * > td,
+div.graphic-log > table > * > * > th {
+    border: 1px solid #c0c0c0;
+    padding: 0px;
+    text-align: center;
+}
+th.h {
+    width: 23px;
+}
+div.graphic-log div.legend {
+    text-align: right;
+    margin-top: 10px;
+}
+div.graphic-log div.legend span {
+    padding: 2px 5px;
+}
 
+div.graphic-log div.bar {
+    position: relative;
+}
+div.graphic-log div.bar > span {
+    display: block;
+    position: absolute;
+    height: 10px;
+}
+
+div.graphic-log span.d0 {
+    background: #8080ff;
+}
+div.graphic-log span.d1 {
+    background: #ff8080;
+}
+div.graphic-log span.d2 {
+    background: #80ff80;
+}
+div.graphic-log span.d3 {
+    background: #80a0a0;
+}
+
+div.graphic-log div.bar > span.d0 {
+    top: 0;
+}
+div.graphic-log div.bar > span.d1 {
+    top: 10px;
+}
+div.graphic-log div.bar > span.d2 {
+    top: 20px;
+}
+div.graphic-log div.bar > span.d3 {
+    top: 30px;
+}
+/* possibly add colors for more devices */

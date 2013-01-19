@@ -115,3 +115,12 @@ END;
 
     unlink( $tmp );
 }
+
+function parseLogLine( $line ) {
+    // 2013-01-13 07:00:01     11      1
+    if( preg_match( '!^(\d+)-(\d+)-(\d+) (\d+):(\d+):(\d+).*\t([^\t]*)\t([^\t]*)$!', $line, $matches )) {
+        return $matches;
+    } else {
+        return NULL;
+    }
+}

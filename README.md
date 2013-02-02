@@ -9,6 +9,11 @@ http://upon2020.com/blog/2012/12/my-raspberry-pi-pool-timer-why/
 This should run on any Linux-based OS, although installation instructions
 were written for raspbian. You just need Apache, PHP, and WiringPi.
 
+You can schedule devices connected to any GPIO pin to be on and off at
+an arbitrary time but once a day. You can also manually switch the devices
+on and off. There is a textual log, and graphical log. See also
+directory screenshots/.
+
 Installation:
 
     sudo apt-get update

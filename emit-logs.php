@@ -47,6 +47,8 @@ if( !isset( $matches ) || !$matches ) {
 ?>
   </tbody>
  </table>
- <p>It currently is <?php print( date( "H:i:s" )) ?>. <a href="">Refresh</a>.</p>
+<?php
+require( 'emit-current-time.php' );
+?>
 </div>
 

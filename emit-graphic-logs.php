@@ -119,6 +119,6 @@ if( isset( $parsedLine ) && $parsedLine ) {
 </div>
 <?php
 }
+require( 'emit-current-time.php' );
 ?>
- <p>It currently is <?php print( date( "H:i:s" )) ?>. <a href="">Refresh</a>.</p>
 </div>

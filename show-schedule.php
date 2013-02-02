@@ -1,5 +1,7 @@
   <h2>Schedule:</h2>
-  <p>It currently is <?php print( date( "H:i:s" )) ?>. <a href="">Refresh</a>.</p>
+<?php
+require( 'emit-current-time.php' );
+?>
   <form method="GET">
    <table class="schedule">
 <?php

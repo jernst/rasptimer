@@ -65,6 +65,14 @@ div.tabs > ul > li {
     display: inline;
     margin: 0 5px;
 }
+ul.log-files {
+    margin: 0;
+    padding: 0;
+}
+ul.log-files > li {
+    display: inline;
+    margin: 0 5px;
+}
 div.log {
     margin: 40px 30px 30px 30px;
 }
@@ -93,6 +101,9 @@ div.graphic-log > table > * > * > th {
 }
 th.h {
     width: 23px;
+}
+.selected {
+    font-weight: bold;
 }
 div.graphic-log div.legend {
     text-align: right;

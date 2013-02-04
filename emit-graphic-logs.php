@@ -9,6 +9,10 @@ div.graphic-log div.bar {
 }
 </style>
 <div class="graphic-log">
+<?php
+$page = $_GET['page'];
+printLogFileLines( "graphic-logs.php", $page );
+?>
  <table>
   <thead>
    <tr>
@@ -27,7 +31,22 @@ div.graphic-log div.bar {
   <tbody>
 <?php
 
-$logFh = @fopen( $logFile, "r" );
+if( $page ) {
+    foreach( $oldLogFilesPrintf as $candidate ) {
+        $candidateFile = sprintf( $candidate, $page );
+        if( substr( $candidateFile, -3 ) === ".gz" ) {
+            $logFh = @gzopen( $candidateFile, "r" );
+        } else {
+           $logFh = @fopen( $candidateFile, "r" );
+        }
+        if( $logFh ) {
+            break;
+        }
+    }
+} else {
+    $logFh = @fopen( $logFile, "r" );
+}
+
 if( $logFh ) {
 
     function drawBar( $deviceIndex, $timeOn, $timeOff ) {

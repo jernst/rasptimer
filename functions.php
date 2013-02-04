@@ -124,3 +124,26 @@ function parseLogLine( $line ) {
         return NULL;
     }
 }
+
+function printLogFileLines( $url, $page ) {
+    global $logFile;
+    global $logFilesGlob;
+    global $oldLogFilesPattern;
+
+    $logFiles = glob( $logFilesGlob );
+    if( count( $logFiles ) > 1  ) {
+        print "<ul class=\"log-files\">\n";
+
+        for( $i=0 ; $i<count( $logFiles ) ; ++$i ) {
+            if( $logFile == $logFiles[$i] ) {
+                $selected = !isset( $page ) ? " class=\"selected\"" : "";
+                print "<li$selected><a href=\"$url\">Current</a></li>\n";
+
+            } elseif( preg_match( "#$oldLogFilesPattern#", $logFiles[$i], $matches )) {
+                $selected = ( $page == $matches[1] ) ? " class=\"selected\"" : "";
+                print "<li$selected><a href=\"$url?page=$matches[1]\">$matches[1]</a></li>\n";
+            }
+        }
+        print "</ul>\n";
+    }
+}

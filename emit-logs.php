@@ -1,4 +1,8 @@
 <div class="log">
+<?php
+$page = $_GET['page'];
+printLogFileLines( "logs.php", $page );
+?>
  <table>
   <thead>
    <tr>
@@ -9,8 +13,22 @@
   </thead>
   <tbody>
 <?php
+if( $page ) {
+    foreach( $oldLogFilesPrintf as $candidate ) {
+        $candidateFile = sprintf( $candidate, $page );
+        if( substr( $candidateFile, -3 ) === ".gz" ) {
+            $logFh = @gzopen( $candidateFile, "r" );
+        } else {
+           $logFh = @fopen( $candidateFile, "r" );
+        }
+        if( $logFh ) {
+            break;
+        }
+    }
+} else {
+    $logFh = @fopen( $logFile, "r" );
+}
 
-$logFh = @fopen( $logFile, "r" );
 if( $logFh ) {
     $reverseDevices = array_flip( $devices );
     while( $line = fgets( $logFh )) {

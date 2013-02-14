@@ -122,6 +122,9 @@ div.graphic-log div.bar > span {
     height: 10px;
 }
 
+span.dotdotdot {
+    line-height: 2px;
+}
 div.graphic-log span.d0 {
     background: #8080ff;
 }

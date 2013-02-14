@@ -1,6 +1,6 @@
 /var/log/rasptimer.log {
-        weekly
-        rotate 52
+        monthly
+        rotate 24
         compress
         delaycompress
         missingok

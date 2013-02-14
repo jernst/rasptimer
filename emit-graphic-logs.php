@@ -49,13 +49,18 @@ if( $page ) {
 
 if( $logFh ) {
 
-    function drawBar( $deviceIndex, $timeOn, $timeOff ) {
+    function drawBar( $deviceIndex, $timeOn, $timeOff, $dotdotdot=0 ) {
         global $barHeight;
         global $barWidthPerHour;
 
         $left  = round( $timeOn/3600.0*$barWidthPerHour );
         $width = max( 1, round( ( $timeOff - $timeOn )/3600.0*$barWidthPerHour ));
+
         print( "<span style=\"left: ${left}px; width: ${width}px;\" class=\"d${deviceIndex}\"></span>\n" );
+        if( $dotdotdot ) {
+            $both = $left + $width;
+            print( "<span style=\"left: ${both}px;\" class=\"d${deviceIndex} dotdotdot\">...</span>\n" );
+        }
     }
 
     $reverseDevices = array_flip( $devices );
@@ -85,9 +90,13 @@ if( $logFh ) {
 
     if( count( $days ) > 0 ) {
         ksort( $days, SORT_NUMERIC );
-        foreach( $days as $day => $deviceEvents ) {
-            $deviceStatus = array(); // keyed by deviceIndex, valued by start time
+        $today = strtotime('today');
+        $now   = time() - $today;
+        $today = unixtojd( $today );
 
+        $deviceStatus = array(); // keyed by deviceIndex, valued by start time
+
+        foreach( $days as $day => $deviceEvents ) {
             preg_match( "!(\d+)/(\d+)/(\d+)!", jdtogregorian( $day ), $matched );
             print( "<tr>\n" );
             printf( " <td>%04d-%02d-%02d</td>\n", $matched[3], $matched[1], $matched[2] );
@@ -107,7 +116,38 @@ if( $logFh ) {
                     }
                 }
             }
+            if( $day == $today ) {
+                foreach( $deviceStatus as $deviceIndex => $timeOfDay ) {
+                    drawBar( $deviceIndex, $timeOfDay, $now, 1 );
+                }
+            } else {
+                foreach( $deviceStatus as $deviceIndex => $timeOfDay ) {
+                    drawBar( $deviceIndex, $timeOfDay, 24*60*60 );
+                    $deviceStatus[$deviceIndex] = 0; // midnight
+                }
+            }
 
+            print( " </div></td>\n" );
+            print( "</tr>\n" );
+        }
+        if( $day < $today && count( $deviceStatus ) > 0 ) {
+            for( ; $day < $today ; ++$day ) {
+                preg_match( "!(\d+)/(\d+)/(\d+)!", jdtogregorian( $day ), $matched );
+                print( "<tr>\n" );
+                printf( " <td>%04d-%02d-%02d</td>\n", $matched[3], $matched[1], $matched[2] );
+                print( " <td colspan=\"24\"><div class=\"bar\">\n" );
+                foreach( $deviceStatus as $deviceIndex => $timeOfDay ) {
+                    drawBar( $deviceIndex, 0, 24*60*60 );
+                }
+                print( " </div></td>\n" );
+                print( "</tr>\n" );
+            }
+            print( "<tr>\n" );
+            print( strftime( " <td>%G-%m-%d</td>\n" ));
+            print( " <td colspan=\"24\"><div class=\"bar\">\n" );
+            foreach( $deviceStatus as $deviceIndex => $timeOfDay ) {
+                drawBar( $deviceIndex, 0, $now, 1 );
+            }
             print( " </div></td>\n" );
             print( "</tr>\n" );
         }

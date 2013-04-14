@@ -17,8 +17,7 @@ directory screenshots/.
 Installation:
 
     sudo apt-get update
-    sudo apt-get install libapache2-mod-php5
-    sudo apt-get install git
+    sudo apt-get install libapache2-mod-php5 git at
     cd ~
     git clone https://github.com/WiringPi/WiringPi.git
     cd WiringPi/wiringPi
@@ -31,6 +30,7 @@ Installation:
     sudo git clone https://github.com/jernst/rasptimer.git
     touch /var/log/rasptimer.log
     chown www-data /var/log/rasptimer.log
+    sudo echo www-data > /etc/at.allow
 
 then enter your Raspberry Pi input/output configuration by editing
     vi rasptimer/config.php

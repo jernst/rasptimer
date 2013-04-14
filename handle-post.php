@@ -1,10 +1,18 @@
 <?php
 // run now or stop now
     foreach( $devices as $deviceName => $devicePin ) {
-        $postPar = $deviceName . 'Action';
-        $postPar = str_replace( ' ', '_', $postPar ); // we love PHP
-        if( isset( $_POST[$postPar] )) {
-            runGpio( "write", $devicePin, $_POST[$postPar] == 'Turn on' ? "1" : "0" );
+        $actionPar   = $deviceName . 'Action';
+        $durationPar = $deviceName . 'Duration';
+        $actionPar   = str_replace( ' ', '_', $actionPar ); // we love PHP
+        $durationPar = str_replace( ' ', '_', $durationPar ); // we love PHP
+
+        if( isset( $_POST[$actionPar] )) {
+            $turnOn = $_POST[$actionPar] == 'Turn on';
+            runGpio( "write", $devicePin, $turnOn ? "1" : "0" );
+
+            if( isset( $_POST[$durationPar] ) && $_POST[$durationPar] ) { # something other than 0
+                issueAt( $deviceName, $_POST[$durationPar], $turnOn ? "0" : "1" );
+            }
         }
     }
 

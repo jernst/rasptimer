@@ -29,6 +29,17 @@ function runGpio( $cmd, $pin, $args = '' ) {
     }
 }
 
+function issueAt( $deviceName, $minFromNow, $onOff ) {
+    global $devices;
+
+    $script = $_SERVER['SCRIPT_FILENAME'];
+    $script = substr( $script, 0, strrpos( $script, "/" )) . "/at-run.php";
+
+    $devicePin = $devices[$deviceName];
+
+    exec( "echo /usr/bin/php $script $devicePin $onOff | /usr/bin/at 'now + $minFromNow min'" ); 
+}
+
 function readCrontab() {
     global $devices;
 

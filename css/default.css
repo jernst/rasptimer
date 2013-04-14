@@ -52,6 +52,11 @@ div.footnote > p {
 }
 form.change-schedule input[type="text"] {
     width: 2em;
+    padding: 2px;
+    border-radius: 0; /* hacks to make WebKit behave on both iOS and desktop */
+    border: 1px solid #d0d0d0;
+    background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(0,0%,100%,0)), to(hsla(0,0%,100%,0)));
+    background-image:-webkit-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0));
 }
 div.tabs {
     float: right;

@@ -1,11 +1,11 @@
 <?php
 require_once( 'config.php' );
-require_once( '/usr/share/rasptimer/php/template.php' );
-require_once( '/usr/share/rasptimer/php/functions.php' );
-require_once( '/usr/share/rasptimer/php/decode-url.php' );
+require_once( 'template.php' );
+require_once( 'functions.php' );
+require_once( 'decode-url.php' );
 
 if( $_POST ) {
-    require_once( '/usr/share/rasptimer/handle-post.php' );
+    require_once( 'handle-post.php' );
 }
 
 ?>

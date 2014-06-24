@@ -3,7 +3,7 @@
 foreach( $devices as $deviceName => $devicePin ) {
     $postPar = $deviceName . 'Action';
     $postPar = str_replace( ' ', '_', $postPar ); // we love PHP
-    if( $_GET[$postPar] == 'Change schedule' ) {
+    if( isset( $_GET[$postPar] ) && $_GET[$postPar] == 'Change schedule' ) {
         $foundDeviceName = $deviceName;
         $foundDevicePin  = $devicePin;
         break;

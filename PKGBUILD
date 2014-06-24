@@ -1,7 +1,7 @@
 _developer=http://upon2020.com/
 _maintainer=$_developer
 pkgname=rasptimer
-pkgver=0.1
+pkgver=0.2
 pkgrel=1
 pkgdesc="Rasptimer"
 arch=('any')
@@ -36,10 +36,11 @@ package() {
 # Templates
     mkdir -p $pkgdir/usr/share/${pkgname}/tmpl
     install $startdir/tmpl/config.php.pl $pkgdir/usr/share/${pkgname}/tmpl/
+    install $startdir/tmpl/htaccess.tmpl $pkgdir/usr/share/${pkgname}/tmpl/
 
-# Code
-    mkdir -p $pkgdir/usr/share/${pkgname}/php
-    cp -a $startdir/php/* $pkgdir/usr/share/${pkgname}/php/
+# Web stuff
+    mkdir -p $pkgdir/usr/share/${pkgname}/web
+    cp -a $startdir/web/* $pkgdir/usr/share/${pkgname}/web/
 
 # Logs
     mkdir -p $pkgdir/var/log

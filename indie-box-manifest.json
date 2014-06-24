@@ -29,9 +29,34 @@
             ],
             "appconfigitems" : [
                 {
-                    "type"       : "symlink",
-                    "name"       : "index.php",
-                    "source"     : "php/index.php"
+                    "type"       : "directorytree",
+                    "names"      : [
+                        "css",
+                        "decode-url.php",
+                        "emit-current-time.php",
+                        "emit-graphic-logs.php",
+                        "emit-logs.php",
+                        "footer.php",
+                        "functions.php",
+                        "graphic-logs.php",
+                        "handle-post.php",
+                        "head.php",
+                        "header.php",
+                        "images",
+                        "index.php",
+                        "logs.php",
+                        "show-change-schedule.php",
+                        "show-schedule.php",
+                        "show-status.php",
+                        "template.php",
+                    ],
+                    "source"     : "web/$2"
+                },
+                {
+                    "type"       : "file",
+                    "name"       : "${appconfig.apache2.appconfigfragmentfile}",
+                    "template"     : "tmpl/htaccess.tmpl",
+                    "templatelang" : "varsubst"
                 },
                 {
                     "type"       : "file",

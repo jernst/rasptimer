@@ -15,12 +15,12 @@ function runGpio( $cmd, $pin, $args = '' ) {
     if( $cmd == 'write' ) {
         logEvent( $pin, $args );
     }
-    exec( "/usr/local/bin/gpio mode $pin out", $out, $status );
+    exec( "/usr/bin/gpio mode $pin out", $out, $status );
     $status = NULL;
     $out    = NULL;
-    exec( "/usr/local/bin/gpio $cmd $pin $args", $out, $status );
+    exec( "/usr/bin/gpio $cmd $pin $args", $out, $status );
     if( $status ) {
-        print( "<p class='error'>Failed to execute /usr/local/bin/gpio $cmd $pin $args: Status $status</p>\n" );
+        print( "<p class='error'>Failed to execute /usr/bin/gpio $cmd $pin $args: Status $status</p>\n" );
     }
     if( is_array( $out ) && count( $out ) > 0  ) {
         return $out[0];

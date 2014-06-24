@@ -1,0 +1,96 @@
+{
+    "type" : "app",
+
+    "info" : {
+        "package"         : "##pkgname##",
+        "name"            : "Rasptimer",
+        "tagline"         : "##pkgdesc##",
+
+        "developer"       : "##developer##",
+        "maintainer"      : "##maintainer##",
+
+        "upstreamversion" : "##pkgver##",
+        "packageversion"  : "##pkgver##-##pkgrel##",
+
+        "licenses" : [
+            "##license##"
+        ]
+    },
+
+    "roles" : {
+        "apache2" : {
+            "defaultcontext" : "/rasptimer",
+            "depends"        : [
+                "php",
+                "php-apache"
+            ],
+            "apache2modules" : [
+                "php5"
+            ],
+            "appconfigitems" : [
+                {
+                    "type"       : "symlink",
+                    "name"       : "index.php",
+                    "source"     : "php/index.php"
+                },
+                {
+                    "type"       : "file",
+                    "name"       : "config.php",
+                    "template"     : "tmpl/config.php.pl",
+                    "templatelang" : "perlscript"
+                }
+            ]
+        }
+    },
+    "customizationpoints" : {
+        "title" : {
+            "name" : "Web page title",
+            "type" : "string",
+            "required" : false,
+            "default" : {
+                "value" : "Rasptimer"
+            }
+        },
+        "pin4" : {
+            "name" : "Pin 4 name",
+            "type" : "string",
+            "required" : false,
+            "default" : {
+                "value" : ""
+            }
+        },
+        "pin5" : {
+            "name" : "Pin 5 name",
+            "type" : "string",
+            "required" : false,
+            "default" : {
+                "value" : ""
+            }
+        },
+        "pin6" : {
+            "name" : "Pin 6 name",
+            "type" : "string",
+            "required" : false,
+            "default" : {
+                "value" : ""
+            }
+        },
+        "pin10" : {
+            "name" : "Pin 10 name",
+            "type" : "string",
+            "required" : false,
+            "default" : {
+                "value" : ""
+            }
+        },
+        "pin11" : {
+            "name" : "Pin 11 name",
+            "type" : "string",
+            "required" : false,
+            "default" : {
+                "value" : ""
+            }
+        }
+    }
+}
+

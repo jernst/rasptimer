@@ -1,7 +1,7 @@
 _developer=http://upon2020.com/
 _maintainer=$_developer
 pkgname=rasptimer
-pkgver=0.3
+pkgver=0.4
 pkgrel=1
 pkgdesc="Rasptimer"
 arch=('any')
@@ -43,11 +43,6 @@ package() {
     cp -a $startdir/web/* $pkgdir/usr/share/${pkgname}/web/
 
 # Logs
-    mkdir -p $pkgdir/var/log
-    touch $pkgdir/var/log/rasptimer.log
-    chmod 644 $pkgdir/var/log/rasptimer.log
-    chown http:http $pkgdir/var/log/rasptimer.log
     mkdir -p $pkgdir/etc/logrotate.d/${pkgname}
     install $startdir/logrotate.d-rasptimer $pkgdir/etc/logrotate.d/rasptimer
 }
-

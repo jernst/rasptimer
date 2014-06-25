@@ -27,6 +27,9 @@
             "apache2modules" : [
                 "php5"
             ],
+            "phpmodules" : [
+                "calendar"
+            ],
             "appconfigitems" : [
                 {
                     "type"       : "directorytree",
@@ -65,6 +68,15 @@
                     "name"       : "config.php",
                     "template"     : "tmpl/config.php.pl",
                     "templatelang" : "perlscript"
+                },
+                {
+                    "type" : "file",
+                    "name" : "/var/log/rasptimer.log",
+                    "source" : "/dev/null",
+                    "uname" : "${apache2.uname}",
+                    "gname" : "${apache2.gname}",
+                    "retentionpolicy" : "keep",
+                    "retentionbucket" : "log"
                 }
             ]
         }

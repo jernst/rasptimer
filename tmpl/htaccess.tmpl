@@ -1,3 +1,3 @@
 <Directory ${appconfig.apache2.dir}>
-    php_admin_value open_basedir "${appconfig.apache2.dir}:/tmp/:/usr/share/:/proc/uptime"
+    php_admin_value open_basedir "${appconfig.apache2.dir}:/tmp/:/usr/share/:/proc/uptime:/var/log/rasptimer.log"
 </Directory>

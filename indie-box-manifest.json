@@ -31,6 +31,8 @@
                 {
                     "type"       : "directorytree",
                     "names"      : [
+                        "at-run.php",
+                        "cron-run.php",
                         "css",
                         "decode-url.php",
                         "emit-current-time.php",

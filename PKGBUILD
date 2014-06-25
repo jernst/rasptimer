@@ -1,7 +1,7 @@
 _developer=http://upon2020.com/
 _maintainer=$_developer
 pkgname=rasptimer
-pkgver=0.2
+pkgver=0.3
 pkgrel=1
 pkgdesc="Rasptimer"
 arch=('any')

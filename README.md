@@ -13,9 +13,17 @@ configuration file from the template.
 
 If you run [UBOS](http://ubos.net/), it's much simpler.
 
-1. Download the most recent package file, and then:
-2. 
-    > sudo pacman -U <package-file-you-downloaded>
+1. Clone this repository
+2. Build the UBOS package with:
+
+    > makepkg -c -f
+
+3. Install the UBOS package:
+
+    > sudo pacman -U rasptimer-*-any.pkg.tar.xz
+
+4. Create a site that runs rasptimer:
+
     > sudo ubos-admin createsite --ask
     App to run: rasptimer
 

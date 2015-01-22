@@ -1,22 +1,6 @@
 {
     "type" : "app",
 
-    "info" : {
-        "package"         : "##pkgname##",
-        "name"            : "Rasptimer",
-        "tagline"         : "##pkgdesc##",
-
-        "developer"       : "##developer##",
-        "maintainer"      : "##maintainer##",
-
-        "upstreamversion" : "##pkgver##",
-        "packageversion"  : "##pkgver##-##pkgrel##",
-
-        "licenses" : [
-            "##license##"
-        ]
-    },
-
     "roles" : {
         "apache2" : {
             "defaultcontext" : "/rasptimer",

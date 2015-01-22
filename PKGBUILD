@@ -1,33 +1,20 @@
-_developer=http://upon2020.com/
-_maintainer=$_developer
-pkgname=rasptimer
-pkgver=0.4
-pkgrel=1
-pkgdesc="Rasptimer"
-arch=('any')
+developer=http://upon2020.com/
 url="https://github.com/jernst/rasptimer/"
+maintainer=$_developer
+pkgname=$(basename $(pwd))
+pkgver=0.5
+pkgrel=1
+pkgdesc="Timer app for GPIO pins"
+arch=('any')
 license=('GPL')
-groups=()
 depends=(wiringpi)
-backup=()
-source=()
 options=('!strip')
-md5sums=()
-_parameterize=$(cat <<END
-    s!##pkgname##!$pkgname!g;
-    s!##pkgdesc##!$pkgdesc!g;
-    s!##developer##!$_developer!g;
-    s!##maintainer##!$_maintainer!g;
-    s!##pkgver##!$pkgver!g;
-    s!##pkgrel##!$pkgrel!g;
-    s!##license##!$license!g;
-END
-)
+md5sums=('')
+
 package() {
 # Manifest
-    mkdir -p $pkgdir/var/lib/indie-box/manifests
-    perl -pe "$_parameterize" $startdir/indie-box-manifest.json > $pkgdir/var/lib/indie-box/manifests/${pkgname}.json
-    chmod 0644 $pkgdir/var/lib/indie-box/manifests/${pkgname}.json
+    mkdir -p $pkgdir/var/lib/ubos/manifests
+    install -m0644 $startdir/ubos-manifest.json $pkgdir/var/lib/ubos/manifests/${pkgname}.json
 
 # Icons
     # mkdir -p $pkgdir/srv/http/_appicons/$pkgname

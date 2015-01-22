@@ -1,17 +1,17 @@
 #
 # Perl script that outputs the Rasptimer PHP config.php file, based on the parameters
-# given in the Indie Box Site JSON. Note that this is a perl scriptlet that outputs
-# PHP, so some of the PHP variable names had to be escaped with \$
-#
+# given in the UBOS Site JSON, see http://ubos.net/docs/developers/site-json.html.
+# Note that this is a Perl scriptlet that outputs PHP, so some of the PHP variable
+# names had to be escaped with \$
 
 use strict;
 use warnings;
 
-my $title = $config->getResolve( 'appconfig.installable.customizationpoints.title.value' );
+my $title = $config->getResolve( 'installable.customizationpoints.title.value' );
 
 my $ret = <<END;
 <?php
-// Configuration file. Automatically generated upon installation using "indie-box-admin deploy"
+// Configuration file. Automatically generated upon installation using "ubos-admin deploy"
 //
 
 // Title of the web page
@@ -25,7 +25,7 @@ my $ret = <<END;
 END
 
 for( my $i=0 ; $i<32 ; ++$i ) { # not sure exactly how many we need to check for
-    my $label = $config->getResolveOrNull( "appconfig.installable.customizationpoints.pin$i.value", undef, 1 );
+    my $label = $config->getResolveOrNull( "installable.customizationpoints.pin$i.value", undef, 1 );
     if( $label ) {
         $ret .= "    \"$label\" => $i,\n";
     }

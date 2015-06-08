@@ -13,33 +13,34 @@ configuration file from the template.
 
 If you run [UBOS](http://ubos.net/), it's much simpler.
 
-1. Install the tools and dependencies you need:
+Step 1. Upgrade UBOS to the latest, and install the tools and dependencies you need:
 
 ```
 > sudo pacman -Syu
 > sudo pacman -S git base-devel wiringpi
 ```
 
-2. Clone this repository:
+Step 2. Clone this repository:
 
 ```
 > git clone https://github.com/jernst/rasptimer.git
 ```
 
-3. Build the UBOS package with:
+Step 3. Build the rasptimer package with:
 
 ```
 > cd rasptimer
 > makepkg -c -f
 ```
 
-3. Install the UBOS package for rasptimer:
+Step 4. Install the rasptimer package:
 
 ```
 > sudo pacman -U rasptimer-*-any.pkg.tar.xz
-```
+``
+(There's a wildcard so it works with future versions as well)`
 
-4. Create a site that runs rasptimer:
+Step 5. Create a site that runs rasptimer:
 
 ```
 > sudo ubos-admin createsite --ask

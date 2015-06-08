@@ -9,7 +9,7 @@ arch=('any')
 license=('GPL')
 depends=(wiringpi)
 options=('!strip')
-md5sums=('')
+md5sums=('SKIP')
 
 package() {
 # Manifest

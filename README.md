@@ -47,7 +47,23 @@ Step 5. Create a site that runs rasptimer:
 > sudo ubos-admin createsite --ask
 ```
 
-and answer the questions. Enter "rasptimer" as the name of the app,
-and select '*' as your hostname.
+and answer the questions in the way that is appropriate for you. E.g:
+
+```
+> ubos-admin createsite --ask -n
+App to run: rasptimer
+Hostname (or * for any): *
+App rasptimer suggests context path /rasptimer
+Enter context path:
+Any accessories for rasptimer? Enter list:
+App rasptimer suports a value for title: My pool on-line (duh!)
+App rasptimer suports a value for pin1: Main pump
+App rasptimer suports a value for pin2: Auxiliary pump
+...
+Site admin user id (e.g. admin): admin
+Site admin user name (e.g. John Doe): Administrator
+Site admin user password (e.g. s3cr3t):
+Site admin user e-mail (e.g. foo@bar.com): demo@example.com
+```
 
 Questions? You often can find me on [#ubos](http://webchat.freenode.net/?channels=%23ubos).

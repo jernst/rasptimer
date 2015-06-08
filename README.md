@@ -15,25 +15,35 @@ If you run [UBOS](http://ubos.net/), it's much simpler.
 
 1. Install the tools and dependencies you need:
 
-    > sudo pacman -Syu
-    > sudo pacman -S git base-devel wiringpi
+```
+> sudo pacman -Syu
+> sudo pacman -S git base-devel wiringpi
+```
 
 2. Clone this repository:
 
-    > git clone https://github.com/jernst/rasptimer.git
+```
+> git clone https://github.com/jernst/rasptimer.git
+```
 
 3. Build the UBOS package with:
 
-    > cd rasptimer
-    > makepkg -c -f
+```
+> cd rasptimer
+> makepkg -c -f
+```
 
 3. Install the UBOS package for rasptimer:
 
-    > sudo pacman -U rasptimer-*-any.pkg.tar.xz
+```
+> sudo pacman -U rasptimer-*-any.pkg.tar.xz
+```
 
 4. Create a site that runs rasptimer:
 
-    > sudo ubos-admin createsite --ask
+```
+> sudo ubos-admin createsite --ask
+```
 
 and answer the questions. Enter "rasptimer" as the name of the app,
 and select '*' as your hostname.

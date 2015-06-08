@@ -2,14 +2,13 @@ developer=http://upon2020.com/
 url="https://github.com/jernst/rasptimer/"
 maintainer=$_developer
 pkgname=$(basename $(pwd))
-pkgver=0.5
+pkgver=0.6
 pkgrel=1
 pkgdesc="Timer app for GPIO pins"
 arch=('any')
 license=('GPL')
 depends=(wiringpi)
 options=('!strip')
-md5sums=('SKIP')
 
 package() {
 # Manifest

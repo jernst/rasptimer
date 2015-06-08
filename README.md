@@ -37,3 +37,5 @@ If you run [UBOS](http://ubos.net/), it's much simpler.
 
 and answer the questions. Enter "rasptimer" as the name of the app,
 and select '*' as your hostname.
+
+Questions? You often can find me on [#ubos](http://webchat.freenode.net/?channels=%23ubos).

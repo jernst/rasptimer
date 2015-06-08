@@ -37,8 +37,9 @@ Step 4. Install the rasptimer package:
 
 ```
 > sudo pacman -U rasptimer-*-any.pkg.tar.xz
-``
-(There's a wildcard so it works with future versions as well)`
+```
+
+(There's a wildcard so it works with future versions as well)
 
 Step 5. Create a site that runs rasptimer:
 

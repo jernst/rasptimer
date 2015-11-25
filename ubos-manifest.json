@@ -72,7 +72,8 @@
             "required" : false,
             "default" : {
                 "value" : "Rasptimer"
-            }
+            },
+            "index" : 0
         },
         "pin4" : {
             "name" : "Pin 4 name",
@@ -80,7 +81,8 @@
             "required" : false,
             "default" : {
                 "value" : ""
-            }
+            },
+            "index" : 0
         },
         "pin5" : {
             "name" : "Pin 5 name",
@@ -88,7 +90,8 @@
             "required" : false,
             "default" : {
                 "value" : ""
-            }
+            },
+            "index" : 0
         },
         "pin6" : {
             "name" : "Pin 6 name",
@@ -96,7 +99,8 @@
             "required" : false,
             "default" : {
                 "value" : ""
-            }
+            },
+            "index" : 6
         },
         "pin10" : {
             "name" : "Pin 10 name",
@@ -104,7 +108,8 @@
             "required" : false,
             "default" : {
                 "value" : ""
-            }
+            },
+            "index" : 10
         },
         "pin11" : {
             "name" : "Pin 11 name",
@@ -112,7 +117,8 @@
             "required" : false,
             "default" : {
                 "value" : ""
-            }
+            },
+            "index" : 11
         }
     }
 }

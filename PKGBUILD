@@ -3,11 +3,11 @@ url="https://github.com/jernst/rasptimer/"
 maintainer=$_developer
 pkgname=$(basename $(pwd))
 pkgver=0.6
-pkgrel=2
+pkgrel=3
 pkgdesc="Timer app for GPIO pins"
 arch=('any')
 license=('GPL')
-depends=('at 'wiringpi')
+depends=('at' 'wiringpi')
 options=('!strip')
 
 package() {

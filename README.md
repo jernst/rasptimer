@@ -1,7 +1,7 @@
 rasptimer
 =========
 
-Use Raspberry Pi as a schedulable timer for GPIO hardware, configurable over the web.
+Use a Raspberry Pi as a schedulable timer for GPIO hardware, configurable over the web.
 Uses [WiringPi](http://wiringpi.com/). While I use it on the original Raspberry Pi,
 I can't think of a reason it shouldn't work on Raspberry Pi 2 or Zero.
 
@@ -15,14 +15,15 @@ packages, including creating the configuration file from the template.
 If you run [UBOS](http://ubos.net/), it's much simpler.
 
 Step 1. Write UBOS to an SD Card suitable for your Raspberry Pi, as described
-[here](http://ubos.net/docs/users/installation.html)
+[here](http://ubos.net/docs/users/installation.html).
 
 Step 2. Log on as root, and say:
 
 ```
 > ubos-admin createsite --ask
 ```
-Then answer the questions. Here is an example transcript:
+Then answer the questions. Each pin that you give a name will show up in the
+web interface; unnamed pins are skipped. Here is an example transcript:
 
 ```
 > ubos-admin createsite --ask
@@ -41,7 +42,8 @@ Site admin user password (e.g. s3cr3t):
 Site admin user e-mail (e.g. foo@bar.com): demo@example.com
 ```
 
-That's all. This will download the code, the libraries, install and configure everything,
-even restart your web server.
+Step 3. There is no step three :-) The previous command will have downloaded
+all the code, and the libraries, created the right Apache config files,
+and so forth, and even restarted your web server. Rasptimer is ready to use.
 
 Questions? You often can find me on [#ubos](http://webchat.freenode.net/?channels=%23ubos).

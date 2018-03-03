@@ -17,7 +17,7 @@ my $TEST = new UBOS::WebAppTest(
     description => 'Tests whether rasptimer comes up',
 
     packageDbsToAdd => {
-        'toyapps' => 'http://depot.ubos.net/$channel/$arch/hl-experimental'
+        'hl-experimental' => 'http://depot.ubos.net/$channel/$arch/hl-experimental'
     },
 
     checks      => [

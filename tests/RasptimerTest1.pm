@@ -15,6 +15,11 @@ use UBOS::WebAppTest;
 my $TEST = new UBOS::WebAppTest(
     appToTest   => 'rasptimer',
     description => 'Tests whether rasptimer comes up',
+
+    packageDbsToAdd => {
+        'toyapps' => 'http://depot.ubos.net/$channel/$arch/hl-experimental'
+    },
+
     checks      => [
             new UBOS::WebAppTest::StateCheck(
                     name  => 'virgin',

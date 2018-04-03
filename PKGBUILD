@@ -2,7 +2,7 @@ developer=http://upon2020.com/
 url="https://github.com/jernst/rasptimer/"
 maintainer=$_developer
 pkgname=$(basename $(pwd))
-pkgver=0.7
+pkgver=0.8
 pkgrel=1
 pkgdesc="Timer app for GPIO pins"
 arch=('any')
@@ -12,23 +12,18 @@ options=('!strip')
 
 package() {
 # Manifest
-    mkdir -p $pkgdir/var/lib/ubos/manifests
-    install -m0644 $startdir/ubos-manifest.json $pkgdir/var/lib/ubos/manifests/${pkgname}.json
+    install -D -m0644 ${startdir}/ubos-manifest.json ${pkgdir}/ubos/lib/ubos/manifests/${pkgname}.json
 
 # Icons
-    # mkdir -p $pkgdir/srv/http/_appicons/$pkgname
-    # install -m644 $startdir/appicons/{72x72,144x144}.png $pkgdir/srv/http/_appicons/$pkgname/
+    # install -D -m0644 ${startdir}/appicons/{72x72,144x144}.png -t ${pkgdir}/ubos/http/_appicons/${pkgname}/
 
 # Templates
-    mkdir -p $pkgdir/usr/share/${pkgname}/tmpl
-    install $startdir/tmpl/config.php.pl $pkgdir/usr/share/${pkgname}/tmpl/
-    install $startdir/tmpl/htaccess.tmpl $pkgdir/usr/share/${pkgname}/tmpl/
+    install -D -m0644 ${startdir}/tmpl/* -t ${pkgdir}/ubos/share/${pkgname}/tmpl/
 
 # Web stuff
-    mkdir -p $pkgdir/usr/share/${pkgname}/web
-    cp -a $startdir/web/* $pkgdir/usr/share/${pkgname}/web/
+    mkdir -p ${pkgdir}/ubos/share/${pkgname}/web
+    cp -a ${startdir}/web/* ${pkgdir}/ubos/share/${pkgname}/web/
 
 # Logs
-    mkdir -p $pkgdir/etc/logrotate.d/${pkgname}
-    install $startdir/logrotate.d-rasptimer $pkgdir/etc/logrotate.d/rasptimer
+    install -D -m0644 ${startdir}/logrotate.d-rasptimer -t ${pkgdir}/etc/logrotate.d/
 }

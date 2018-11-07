@@ -1,0 +1,30 @@
+{
+   "hostname" : "*"
+   "appconfigs" : [
+      {
+         "appid" : "rasptimer",
+
+         "customizationpoints" : {
+            "rasptimer" : {
+               "pin10" : {
+                  "value" : "Sweeper pump"
+               },
+               "pin11" : {
+                  "value" : "Main pump"
+               },
+               "title" : {
+                  "value" : "Pool"
+               }
+            }
+         },
+         "context" : ""
+      }
+   ],
+
+   "admin" : {
+      "userid"   : "admin",
+      "username" : "admin",
+      "email"    : "root@localhost"
+   }
+}
+

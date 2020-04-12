@@ -17,33 +17,39 @@ If you run [UBOS](http://ubos.net/), it's much simpler.
 Step 1. Write UBOS to an SD Card suitable for your Raspberry Pi, as described
 [here](http://ubos.net/docs/users/installation.html).
 
-Step 2. Log on as root, and say:
+Step 2. Enable the ``hl-experimental`` repository on UBOS. To do so,
+[as root](https://ubos.net/docs/users/faq.html#i-need-root), uncomment the
+two lines in ``/etc/pacman.d/repositories.d/hl-experimental``, and then
+run ``sudo ubos-admin update``.
+
+Step 3. Run:
 
 ```
-> ubos-admin createsite --ask
+> sudo ubos-admin createsite --ask
 ```
 Then answer the questions. Each pin that you give a name will show up in the
 web interface; unnamed pins are skipped. Here is an example transcript:
 
 ```
-> ubos-admin createsite --ask
-App to run: rasptimer
+> sudo ubos-admin createsite --ask
 Hostname (or * for any): *
+Site admin user id (e.g. admin): admin
+Site admin user name (e.g. John Doe): Administrator
+Site admin user password (e.g. s3cr3t):
+Site admin user e-mail (e.g. foo@bar.com): demo@example.com
+...
+App to run: rasptimer
 App rasptimer suggests context path /rasptimer
 Enter context path:
 Any accessories for rasptimer? Enter list:
 App rasptimer suports a value for title: My pool on-line (duh!)
 App rasptimer suports a value for pin1: Main pump
 App rasptimer suports a value for pin2: Auxiliary pump
-...
-Site admin user id (e.g. admin): admin
-Site admin user name (e.g. John Doe): Administrator
-Site admin user password (e.g. s3cr3t):
-Site admin user e-mail (e.g. foo@bar.com): demo@example.com
 ```
 
-Step 3. There is no step three :-) The previous command will have downloaded
+The previous command will have downloaded
 all the code, and the libraries, created the right Apache config files,
 and so forth, and even restarted your web server. Rasptimer is ready to use.
 
-Questions? You often can find me on [#ubos](http://webchat.freenode.net/?channels=%23ubos).
+Questions? Post to the [UBOS forum](https://forum.ubos.net/)
+

@@ -3,7 +3,7 @@ rasptimer
 
 Use a Raspberry Pi as a schedulable timer for GPIO hardware, configurable over the web.
 Uses [WiringPi](http://wiringpi.com/). While I use it on the original Raspberry Pi,
-I can't think of a reason it shouldn't work on Raspberry Pi 2 or Zero.
+I can't think of a reason it shouldn't work on Raspberry Pi 2, 3, 4 or Zero.
 
 This is the software for the pool timer project described at
 http://upon2020.com/blog/2012/12/my-raspberry-pi-pool-timer-why/
@@ -14,15 +14,15 @@ packages, including creating the configuration file from the template.
 
 If you run [UBOS](http://ubos.net/), it's much simpler.
 
-Step 1. Write UBOS to an SD Card suitable for your Raspberry Pi, as described
+''Step 1.'' Write UBOS to an SD Card suitable for your Raspberry Pi, as described
 [here](http://ubos.net/docs/users/installation.html).
 
-Step 2. Enable the ``hl-experimental`` repository on UBOS. To do so,
+''Step 2.'' Enable the ``hl-experimental`` repository on UBOS. To do so,
 [as root](https://ubos.net/docs/users/faq.html#i-need-root), uncomment the
 two lines in ``/etc/pacman.d/repositories.d/hl-experimental``, and then
 run ``sudo ubos-admin update``.
 
-Step 3. Run:
+''Step 3.'' Run:
 
 ```
 > sudo ubos-admin createsite --ask
@@ -51,5 +51,5 @@ The previous command will have downloaded
 all the code, and the libraries, created the right Apache config files,
 and so forth, and even restarted your web server. Rasptimer is ready to use.
 
-Questions? Post to the [UBOS forum](https://forum.ubos.net/)
+Questions? Post to the [UBOS forum](https://forum.ubos.net/).
 
